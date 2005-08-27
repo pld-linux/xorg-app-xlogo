@@ -11,11 +11,11 @@ Patch0:		xlogo-man.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
