@@ -1,4 +1,4 @@
-# $Rev: 3400 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3400 $, $Date: 2005-08-27 17:42:47 $
 #
 Summary:	xlogo application
 Summary(pl):	Aplikacja xlogo
@@ -17,7 +17,7 @@ BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/xlogo-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
