@@ -1,21 +1,20 @@
 Summary:	xlogo application
 Summary(pl):	Aplikacja xlogo
 Name:		xorg-app-xlogo
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/app/xlogo-%{version}.tar.bz2
-# Source0-md5:	d4aa73acb70b58cf162cad07d0521163
-Patch0:		xlogo-man.patch
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xlogo-%{version}.tar.bz2
+# Source0-md5:	006a5d51ea2350513678c295bb7b0467
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-lib-libXrender-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 0.99.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,7 +25,6 @@ Aplikacja xlogo.
 
 %prep
 %setup -q -n xlogo-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
@@ -41,13 +39,15 @@ Aplikacja xlogo.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	appmandir=%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_sysconfdir}/X11/app-defaults/*
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1*
+%{_libdir}/X11/app-defaults/*
+%{_mandir}/man1/*.1x*
