@@ -1,12 +1,12 @@
 Summary:	xlogo application
 Summary(pl):	Aplikacja xlogo
 Name:		xorg-app-xlogo
-Version:	0.99.2
+Version:	1.0.1
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xlogo-%{version}.tar.bz2
-# Source0-md5:	cfd0edf86d457e34af01fdaab36eeb03
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xlogo-%{version}.tar.bz2
+# Source0-md5:	4c5482552f38a7d42398a694cc9b2ee6
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -15,6 +15,7 @@ BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXp-devel
 BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-lib-libXrender-devel
+BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
 BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc COPYING ChangeLog
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/X11/app-defaults/*
+%{_datadir}/X11/app-defaults/*
 %{_mandir}/man1/*.1x*
