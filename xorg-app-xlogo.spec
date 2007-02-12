@@ -1,5 +1,5 @@
 Summary:	xlogo application
-Summary(pl):	Aplikacja xlogo
+Summary(pl.UTF-8):   Aplikacja xlogo
 Name:		xorg-app-xlogo
 Version:	1.0.1
 Release:	1
@@ -25,7 +25,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xlogo application.
 
-%description -l pl
+%description -l pl.UTF-8
 Aplikacja xlogo.
 
 %prep
