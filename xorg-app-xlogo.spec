@@ -1,5 +1,5 @@
 Summary:	xlogo application
-Summary(pl.UTF-8):   Aplikacja xlogo
+Summary(pl.UTF-8):	Aplikacja xlogo
 Name:		xorg-app-xlogo
 Version:	1.0.1
 Release:	1
