@@ -2,11 +2,12 @@ Summary:	xlogo application
 Summary(pl.UTF-8):	Aplikacja xlogo
 Name:		xorg-app-xlogo
 Version:	1.0.1
-Release:	3
+Release:	5
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xlogo-%{version}.tar.bz2
 # Source0-md5:	4c5482552f38a7d42398a694cc9b2ee6
+Patch0:		%{name}-xaw.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -30,6 +31,7 @@ Aplikacja xlogo.
 
 %prep
 %setup -q -n xlogo-%{version}
+%patch0 -p1
 
 %build
 %{__aclocal}
