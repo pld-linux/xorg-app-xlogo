@@ -1,13 +1,12 @@
-Summary:	xlogo application
-Summary(pl.UTF-8):	Aplikacja xlogo
+Summary:	xlogo application - X Window System logo
+Summary(pl.UTF-8):	Aplikacja xlogo - logo X Window System
 Name:		xorg-app-xlogo
-Version:	1.0.1
-Release:	5
+Version:	1.0.2
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xlogo-%{version}.tar.bz2
-# Source0-md5:	4c5482552f38a7d42398a694cc9b2ee6
-Patch0:		%{name}-xaw.patch
+# Source0-md5:	7365c0852750134119734bc1879f60ca
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -15,23 +14,20 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
-BuildRequires:	xorg-lib-libXp-devel
-BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-lib-libXrender-devel
 BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 Requires:	xorg-lib-libXt >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xlogo application.
+The xlogo application simply displays the X Window System logo.
 
 %description -l pl.UTF-8
-Aplikacja xlogo.
+Aplikacja xlogo po prostu wyświetla logo X Window System.
 
 %prep
 %setup -q -n xlogo-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
@@ -53,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
+%doc COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/xlogo
 %{_datadir}/X11/app-defaults/XLogo*
 %{_mandir}/man1/xlogo.1x*
