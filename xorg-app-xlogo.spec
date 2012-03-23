@@ -1,12 +1,12 @@
 Summary:	xlogo application - X Window System logo
 Summary(pl.UTF-8):	Aplikacja xlogo - logo X Window System
 Name:		xorg-app-xlogo
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xlogo-%{version}.tar.bz2
-# Source0-md5:	8149f95f5a0f04f404549363557eef41
+# Source0-md5:	4ce21861f7b9398805beba8b62d8ff8e
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
